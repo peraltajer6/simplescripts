@@ -1,0 +1,13 @@
+-- Get the local player
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local root = character:WaitForChild("HumanoidRootPart")
+
+-- Create a BodyVelocity to fling
+local bv = Instance.new("BodyVelocity")
+bv.MaxForce = Vector3.new(1e5, 1e5, 1e5)  -- how strong the fling is
+bv.Velocity = Vector3.new(0, 100, 50)      -- direction and speed (Y=up, Z=forward)
+bv.Parent = root
+
+-- Remove it after 0.5 seconds so you don't keep flying
+game:GetService("Debris"):AddItem(bv, 0.5)
