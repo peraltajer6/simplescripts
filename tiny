@@ -1,0 +1,14 @@
+loadstring([[
+-- Make yourself super tiny
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Set really small scale
+humanoid.BodyHeightScale.Value = 0.1
+humanoid.BodyWidthScale.Value = 0.1
+humanoid.BodyDepthScale.Value = 0.1
+humanoid.HeadScale.Value = 0.1
+
+print("You are now super tiny!")
+]])()
